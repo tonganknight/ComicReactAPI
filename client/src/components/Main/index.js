@@ -2,11 +2,31 @@ import React from 'react';
 import { Breakpoint } from 'react-socks';
 import styled from 'styled-components';
 
-class Main extends React.Component{
+
+function Main(){
+
+    function Search() {
+        var SearchInput = document.getElementById("SearchText").value;
+        SearchInput = SearchInput.trim();
+        console.log("the search was for " + SearchInput)
+
+        fetch("https:comicvine.gamespot.com/api/issues/?api_key=5db77536d2105f1cd093dac32687fb4614aa9165")
+        .then(function(response){
+            if (response.ok){
+                response.json().then(function(data) {
+                    
+                console.log(data);
+
+        
+                })
+            } else {
+                console.log("API returns bad response")
+            }
+        })
+   }
 
 
 
-    render(){
 
     const Searchbar = styled.input`
     height: 25px;
@@ -48,14 +68,14 @@ class Main extends React.Component{
      width: 40%;
      margin: 15px;
      border: solid black`
-    
+
 
         return(
         <div>
         <Breakpoint large up>
             <SearchAndIfno>
-            <Searchbar/>
-            <SearchButton>Search</SearchButton>
+            <Searchbar id="SearchText"/>
+            <SearchButton id="SearchBtn" onClick={Search}>Search</SearchButton>
             <PageInfoFlex>
                 <h1>About Comic Portal</h1>
                 <p>Search for a Comic Book Character. 
@@ -65,7 +85,7 @@ class Main extends React.Component{
                     You can search of obscure characters, or well known Legends.
                     <br>
                     </br>
-                    Below you will see your search results displayed. You see some info that 
+                    Below you will see your search results displayed. You might see some info that 
                     you didn't know!  
                 </p>
             </PageInfoFlex>
@@ -83,6 +103,7 @@ class Main extends React.Component{
         
     )
  }
-}
 
-export default Main
+
+
+export default Main;
