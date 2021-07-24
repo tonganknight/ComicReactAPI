@@ -5,7 +5,6 @@
   "dependencies": {
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "jest": "^26.6.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -37,5 +36,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonganknight/ComicReactAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonganknight/ComicReactAPI/issues"
+  },
+  "homepage": "https://github.com/tonganknight/ComicReactAPI#readme"
 }
