@@ -10,21 +10,17 @@ function Main(){
         SearchInput = SearchInput.trim();
         console.log("the search was for " + SearchInput)
 
-        fetch("https:comicvine.gamespot.com/api/issues/?api_key=5db77536d2105f1cd093dac32687fb4614aa9165")
-        .then(function(response){
-            if (response.ok){
-                response.json().then(function(data) {
-                    
-                console.log(data);
+        const apiCallComicVine = "https:comicvine.gamespot.com/api/characters/?api_key=5db77536d2105f1cd093dac32687fb4614aa9165"
 
-        
+        fetch(apiCallComicVine).then(function(response) {
+            if (response.ok) {
+                response.json().then(function(data){
+                    console.log(data);
                 })
-            } else {
-                console.log("API returns bad response")
             }
         })
-   }
-
+     
+    }
 
 
 
@@ -106,4 +102,4 @@ function Main(){
 
 
 
-export default Main;
+export default Main
