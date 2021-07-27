@@ -10,7 +10,7 @@ function Main(){
         SearchInput = SearchInput.trim();
         console.log("the search was for " + SearchInput)
 
-        const apiCallComicVine = "https:comicvine.gamespot.com/api/characters/?api_key=5db77536d2105f1cd093dac32687fb4614aa9165"
+        const apiCallComicVine = "https://comicvine.gamespot.com/api/characters/?api_key=5db77536d2105f1cd093dac32687fb4614aa9165&filter=name:" + SearchInput
 
         fetch(apiCallComicVine).then(function(response) {
             if (response.ok) {
