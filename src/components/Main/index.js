@@ -16,6 +16,10 @@ function Main(){
             if (response.ok) {
                 response.json().then(function(data){
                     console.log(data);
+
+                    
+
+
                 })
             }
         })
