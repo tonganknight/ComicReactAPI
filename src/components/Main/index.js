@@ -9,22 +9,29 @@ function Main(){
         var SearchInput = document.getElementById("SearchText").value;
         SearchInput = SearchInput.trim();
         console.log("the search was for " + SearchInput)
-
-        const apiCallComicVine = "https://comicvine.gamespot.com/api/characters/?api_key=5db77536d2105f1cd093dac32687fb4614aa9165&filter=name:" + SearchInput
+        /*https://cors-anywhere.herokuapp.com*/
+        const apiCallComicVine = "https://superheroapi.com/api/10225396482439686/search/" + SearchInput
 
         fetch(apiCallComicVine).then(function(response) {
             if (response.ok) {
                 response.json().then(function(data){
                     console.log(data);
+                    
 
                     
 
 
                 })
+                
+            } else {
+                alert("Error: " + response.statusText);
             }
-        })
+          
+        });
      
+        
     }
+    
 
 
 
